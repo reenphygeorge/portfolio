@@ -1,0 +1,114 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.intro-text h6
+{
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2.1px;
+}
+
+.intro-text h3 
+{
+    font-size: calc(35px+1vw);
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.intro-text h4 
+{
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    line-height:1.5;
+}
+
+.intro-text p 
+{
+    font-family: "Roboto", sans-serif;
+    color: #777777;
+}
+
+.basic-info
+{
+    padding-left: 0px;
+}
+
+.basic-icn
+{
+    height: 35px;
+    margin-right: 5px;
+}
+
+.anchor
+{
+    text-decoration: none;
+    color: #777777;
+}
+
+.anchor:hover
+{
+    color: rgb(189, 162, 127);
+}
+
+.social-icn
+{
+    margin-right: 20px;
+}
+
+.about h3 
+{
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+}
+
+.about p 
+{
+    font-family: "Roboto", sans-serif;
+    color: #777777;
+}
+
+.skills h3 
+{
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+}
+
+.skill-icn
+{
+    color: #777777;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.projects h3
+{
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+}
+
+.projects p
+{
+    color: #777777;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    text-align:center;
+}
+
+.projects h4
+{
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.projects a
+{
+    font-size:20px;
+    color: rgb(158, 58, 58);
+}
