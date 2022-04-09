@@ -3,6 +3,20 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-color: #000;
+}
+
+.home {
+    border-radius: 17px !important;
+    
+}
+
+.head {
+    color: #d5d4d4;
+}
+
 .intro-text h6
 {
     font-size: 12px;
@@ -28,7 +42,7 @@
 .intro-text p 
 {
     font-family: "Roboto", sans-serif;
-    color: #777777;
+    color: #b9b7b7;
 }
 
 .basic-info
@@ -45,12 +59,12 @@
 .anchor
 {
     text-decoration: none;
-    color: #777777;
+    color: #b3afaf;
 }
 
 .anchor:hover
 {
-    color: rgb(189, 162, 127);
+    color: rgb(154, 153, 147);
 }
 
 .social-icn
@@ -60,41 +74,44 @@
 
 .about h3 
 {
-    color: #222222;
     font-family: "Roboto", sans-serif;
     font-size: 25px;
+    line-height: 2.3;
 }
 
 .about p 
 {
     font-family: "Roboto", sans-serif;
-    color: #777777;
+    color: #b9b7b7;
 }
 
 .skills h3 
 {
-    color: #222222;
     font-family: "Roboto", sans-serif;
     font-size: 25px;
+    line-height: 2.3;
 }
 
 .skill-icn
 {
-    color: #777777;
+    color: #b9b7b7;
     margin-right: 20px;
     margin-top: 20px;
 }
 
+.projects {
+    border-radius: 17px !important;
+}
+
 .projects h3
 {
-    color: #222222;
     font-family: "Roboto", sans-serif;
     font-size: 25px;
 }
 
 .projects p
 {
-    color: #777777;
+    color: #b9b7b7;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     text-align:center;
@@ -102,7 +119,7 @@
 
 .projects h4
 {
-    color: #000;
+    color: #b9b7b7;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
 }
