@@ -19,6 +19,22 @@
     {
         font-size: 20px;   
     }
+
+    .project-card-title {
+        font-size: 18px;
+    }
+
+    .project-card-subtitle {
+        font-size: 15px;
+    }
+
+    .project-card-link {
+        font-size: 14px !important;
+    }
+
+    footer {
+        margin-top: 30px !important;
+    }
 }
 
 @media only screen and (max-width: 426px)
@@ -33,9 +49,21 @@
         font-size: 14px;
     }
 
-    .projects a
+    /* .projects a
     {
         font-size: 16px;
+    } */
+
+    .project-card-title {
+        font-size: 17px;
+    }
+
+    .project-card-subtitle {
+        font-size: 14px;
+    }
+
+    .project-card-link {
+        font-size: 13px !important;
     }
 }
 

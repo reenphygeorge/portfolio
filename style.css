@@ -124,8 +124,35 @@ body {
     font-size: 15px;
 }
 
-.projects a
-{
-    font-size:20px;
+.logo {
+    width: 80px;
+}
+
+.project-card {
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #b9b7b7;
+    margin-top: 40px;
+}
+
+.project-card:hover {
+    border-color: rgb(158, 58, 58);
+}
+
+.project-card-title {
+    font-size: 22px;
+}
+
+.project-card-subtitle {
+    font-size: 18px;
+}
+
+.project-card-link {
+    font-size: 16px;
+    text-decoration: none;
     color: rgb(158, 58, 58);
+}
+
+.project-card-link:hover {
+    color:rgb(222, 84, 84);
 }
