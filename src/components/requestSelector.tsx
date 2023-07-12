@@ -17,6 +17,7 @@ const RequestSelector: FC = () => {
             rounded="12px"
             fontWeight="bold"
             placeholder="GET"
+            border="none"
           >
             <option value="post">POST</option>
             <option value="put">PUT</option>
