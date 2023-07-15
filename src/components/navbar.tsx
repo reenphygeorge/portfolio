@@ -15,7 +15,7 @@ const Navbar = () => (
           R
         </Text>
         <Text userSelect="none" pt={4} fontSize="10px" fontWeight="bold">
-          docs
+          client
         </Text>
       </Flex>
     </Container>
