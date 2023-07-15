@@ -1,29 +1,61 @@
 import { FC, useState } from "react";
-import { Box, Flex, FormControl, Input, Select, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  Input,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from "@chakra-ui/react";
+
+import { HiChevronDown } from "react-icons/hi";
 
 const RequestSelector: FC = () => {
   const [route, setRoute] = useState<string>("home");
+  const [method, setMethod] = useState<string>("GET");
   return (
     <>
       <FormControl>
         <Flex>
-          <Select
-            bg="#272727"
-            width={"120px"}
-            height={"50px"}
-            _hover={{ bg: "#272727" }}
-            color="white"
-            fontSize={["sm", "md", "md"]}
-            rounded="12px"
-            fontWeight="bold"
-            placeholder="GET"
-            border="none"
-          >
-            <option value="post">POST</option>
-            <option value="put">PUT</option>
-            <option value="patch">PATCH</option>
-            <option value="delete">DELETE</option>
-          </Select>
+          <Menu>
+            <MenuButton
+              as={Button}
+              bg="#272727"
+              _hover={{ bg: "#272727" }}
+              _focus={{ bg: "#272727" }}
+              width={"120px"}
+              height={"50px"}
+              color="white"
+              fontSize={["sm", "md", "md"]}
+              rounded="12px"
+              fontWeight="bold"
+              rightIcon={<HiChevronDown />}
+              border="none"
+            >
+              {method}
+            </MenuButton>
+            <MenuList>
+              <MenuItem value="get" onClick={() => setMethod("GET")}>
+                GET
+              </MenuItem>
+              <MenuItem value="post" onClick={() => setMethod("POST")}>
+                POST
+              </MenuItem>
+              <MenuItem value="put" onClick={() => setMethod("PUT")}>
+                PUT
+              </MenuItem>
+              <MenuItem value="patch" onClick={() => setMethod("PATCH")}>
+                PATCH
+              </MenuItem>
+              <MenuItem value="delete" onClick={() => setMethod("DELETE")}>
+                DELETE
+              </MenuItem>
+            </MenuList>
+          </Menu>
           <Input
             ms={2}
             value={`knowmyip:3000/${route}`}
@@ -35,6 +67,7 @@ const RequestSelector: FC = () => {
             width={["260px", "500px", "500px"]}
             height={"50px"}
             border="none"
+            readOnly
           />
         </Flex>
       </FormControl>
@@ -54,6 +87,7 @@ const RequestSelector: FC = () => {
           cursor="pointer"
         >
           <Text
+            userSelect="none"
             textAlign="center"
             color="#505050"
             py={2}
@@ -66,20 +100,21 @@ const RequestSelector: FC = () => {
         <Box
           width={["120px", "140px", "140px"]}
           height={["35px", "40px", "40px"]}
-          bg={route === "explorations" ? "#C1FFDA" : "#F0F2F5"}
+          bg={route === "expeditions" ? "#C1FFDA" : "#F0F2F5"}
           mr="5"
           rounded="full"
-          onClick={() => setRoute("explorations")}
+          onClick={() => setRoute("expeditions")}
           cursor="pointer"
         >
           <Text
+            userSelect="none"
             textAlign="center"
             color="#505050"
             py={2}
             fontSize={["sm", "md", "md"]}
             fontWeight="normal"
           >
-            explorations
+            expeditions
           </Text>
         </Box>
         <Box
@@ -91,6 +126,7 @@ const RequestSelector: FC = () => {
           cursor="pointer"
         >
           <Text
+            userSelect="none"
             textAlign="center"
             py={2}
             fontSize={["sm", "md", "md"]}

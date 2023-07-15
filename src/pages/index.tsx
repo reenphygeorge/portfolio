@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <Navbar />
         <Container h="100vh" pt="120px" maxW="xl">
           <RouteSelector />
-          {/* <ResponseData /> */}
+          <ResponseData />
         </Container>
       </main>
     </>

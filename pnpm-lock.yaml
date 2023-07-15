@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@chakra-ui/anatomy': ^2.1.1
   '@chakra-ui/next-js': ^2.1.4
   '@chakra-ui/react': ^2.7.1
   '@emotion/react': ^11.11.1
@@ -15,9 +16,11 @@ specifiers:
   next: 13.4.9
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.10.1
   typescript: 5.1.6
 
 dependencies:
+  '@chakra-ui/anatomy': 2.1.1
   '@chakra-ui/next-js': 2.1.4_s65n2qkw7nkj76m4bmvfl6z2ie
   '@chakra-ui/react': 2.7.1_ev645gguubztdwou4ce2tqqg6a
   '@emotion/react': 11.11.1_i73ekzlbntu7jol6ph2fvy4mga
@@ -32,6 +35,7 @@ dependencies:
   next: 13.4.9_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.10.1_react@18.2.0
   typescript: 5.1.6
 
 packages:
@@ -121,6 +125,10 @@ packages:
       '@chakra-ui/spinner': 2.0.13_62ez5scglruzijw4rniqq4y54y
       '@chakra-ui/system': 2.5.8_5uavjbr3lmuxf4a3t6dmknaeea
       react: 18.2.0
+    dev: false
+
+  /@chakra-ui/anatomy/2.1.1:
+    resolution: {integrity: sha512-LUHAoqJAgxAqmyckG5bUpBrfEo1FleEyY+1A8hkWciy58gZ+h3GoY9oBpHcdo7XdHPpy3G+3hieK/7i9NLwxAw==}
     dev: false
 
   /@chakra-ui/anatomy/2.1.2:
@@ -3378,6 +3386,14 @@ packages:
       react-clientside-effect: 1.2.6_react@18.2.0
       use-callback-ref: 1.3.0_i73ekzlbntu7jol6ph2fvy4mga
       use-sidecar: 1.1.2_i73ekzlbntu7jol6ph2fvy4mga
+    dev: false
+
+  /react-icons/4.10.1_react@18.2.0:
+    resolution: {integrity: sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
