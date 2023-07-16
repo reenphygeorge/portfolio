@@ -1,14 +1,23 @@
+import Image from "next/image";
 import {
+  Box,
   Card,
   CardBody,
+  CardHeader,
+  Divider,
   Flex,
   HStack,
   Highlight,
   Text,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useState } from "react";
+import { BiCodeAlt } from "react-icons/bi";
+import Lottie from "lottie-react";
+import spinner from "../../public/spinner.json";
+// import wave from "../../public/wave.gif";
 
 const ResponseData: FC = () => {
+  const [viewCode, setViewCode] = useState<string>("gray");
   return (
     <>
       <Flex mt={[14, 14, 14]} ms={2}>
@@ -39,12 +48,26 @@ const ResponseData: FC = () => {
           </Text>
         </HStack>
       </Flex>
-      <Card mt={1}>
+      <Card mt={1} height={80}>
         <CardBody>
-          <Flex justify="center" align="center" height={80}>
-            <Text color="gray.300" fontSize={12}>
-              API Content coming soon...
-            </Text>
+          <Flex mb={2} justify="end">
+            <BiCodeAlt
+              cursor="pointer"
+              color={viewCode}
+              onClick={() => {
+                viewCode === "gray"
+                  ? setViewCode("#06E938")
+                  : setViewCode("gray");
+              }}
+              size="18"
+            />
+          </Flex>
+          <Divider />
+          <Flex h="full" justify="center" alignItems="center">
+            {/* <Image src={wave} alt="wave" width={30} height={30} /> */}
+            <Box w={10}>
+              <Lottie animationData={spinner} loop={true} />
+            </Box>
           </Flex>
         </CardBody>
       </Card>

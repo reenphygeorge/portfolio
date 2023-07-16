@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 import {
   Box,
   Button,
@@ -11,12 +11,14 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-
 import { HiChevronDown } from "react-icons/hi";
+import { RequestContext } from "@/contexts/requestContext";
 
 const RequestSelector: FC = () => {
-  const [route, setRoute] = useState<string>("home");
-  const [method, setMethod] = useState<string>("GET");
+  // const [route, setRoute] = useState<string>("home");
+  // const [method, setMethod] = useState<string>("GET");
+  const { payload, setPayload } = useContext(RequestContext);
+  const { method, route } = payload;
   return (
     <>
       <FormControl>
@@ -39,26 +41,41 @@ const RequestSelector: FC = () => {
               {method}
             </MenuButton>
             <MenuList>
-              <MenuItem value="get" onClick={() => setMethod("GET")}>
+              <MenuItem
+                value="get"
+                onClick={() => setPayload({ ...payload, method: "GET" })}
+              >
                 GET
               </MenuItem>
-              <MenuItem value="post" onClick={() => setMethod("POST")}>
+              <MenuItem
+                value="post"
+                onClick={() => setPayload({ ...payload, method: "POST" })}
+              >
                 POST
               </MenuItem>
-              <MenuItem value="put" onClick={() => setMethod("PUT")}>
+              <MenuItem
+                value="put"
+                onClick={() => setPayload({ ...payload, method: "PUT" })}
+              >
                 PUT
               </MenuItem>
-              <MenuItem value="patch" onClick={() => setMethod("PATCH")}>
+              <MenuItem
+                value="patch"
+                onClick={() => setPayload({ ...payload, method: "PATCH" })}
+              >
                 PATCH
               </MenuItem>
-              <MenuItem value="delete" onClick={() => setMethod("DELETE")}>
+              <MenuItem
+                value="delete"
+                onClick={() => setPayload({ ...payload, method: "DELETE" })}
+              >
                 DELETE
               </MenuItem>
             </MenuList>
           </Menu>
           <Input
             ms={2}
-            value={`knowmyip:3000/${route}`}
+            value={`getmyip:3000/${route}`}
             fontWeight="normal"
             fontSize={["15", "lg", "lg"]}
             bg="#F0F2F5"
@@ -83,7 +100,7 @@ const RequestSelector: FC = () => {
           bg={route === "home" ? "#C1FFDA" : "#F0F2F5"}
           mr="5"
           rounded="full"
-          onClick={() => setRoute("home")}
+          onClick={() => setPayload({ ...payload, route: "home" })}
           cursor="pointer"
         >
           <Text
@@ -103,7 +120,7 @@ const RequestSelector: FC = () => {
           bg={route === "expeditions" ? "#C1FFDA" : "#F0F2F5"}
           mr="5"
           rounded="full"
-          onClick={() => setRoute("expeditions")}
+          onClick={() => setPayload({ ...payload, route: "expeditions" })}
           cursor="pointer"
         >
           <Text
@@ -122,7 +139,7 @@ const RequestSelector: FC = () => {
           height={["35px", "40px", "40px"]}
           bg={route === "projects" ? "#C1FFDA" : "#F0F2F5"}
           rounded="full"
-          onClick={() => setRoute("projects")}
+          onClick={() => setPayload({ ...payload, route: "projects" })}
           cursor="pointer"
         >
           <Text
