@@ -8,6 +8,7 @@ import {
   HStack,
   Highlight,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { FC, useContext, useEffect, useState } from "react";
 import { BiCodeAlt } from "react-icons/bi";
@@ -17,18 +18,20 @@ import { RequestContext } from "@/contexts/requestContext";
 import wave from "../../public/wave.gif";
 
 const ResponseData: FC = () => {
-  const [viewCode, setViewCode] = useState<string>("gray");
+  const [viewCodeColor, setViewCodeColor] = useState<string>("gray");
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingTime, setLoadingTime] = useState<number>();
   const { payload, setPayload } = useContext(RequestContext);
-
   const { method, route } = payload;
+
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     let randomDuration: number = Math.floor(Math.random() * 301) + 100; // Generate a random number between 100 and 300
     method === "GET" ? (randomDuration *= 2) : "";
     setLoadingTime(randomDuration);
     setLoading(true);
+    setViewCodeColor("gray");
     const timer = setTimeout(() => {
       setLoading(false);
     }, randomDuration);
@@ -44,13 +47,24 @@ const ResponseData: FC = () => {
         ) : (
           <HStack spacing={8}>
             <Text
-              color={method === "GET" ? "#06E938" : "red"}
+              color={
+                method === "GET"
+                  ? colorMode === "light"
+                    ? "green.50"
+                    : "green.75"
+                  : colorMode === "light"
+                  ? "red.50"
+                  : "red.75"
+              }
               fontSize="12"
               fontWeight="semibold"
             >
               <Highlight
                 query="status:"
-                styles={{ color: "#505050", fontSize: "15" }}
+                styles={{
+                  color: colorMode === "light" ? "black.50" : "gray.300",
+                  fontSize: "15",
+                }}
               >
                 {method === "GET"
                   ? `status: 200 • OK`
@@ -58,26 +72,40 @@ const ResponseData: FC = () => {
               </Highlight>
             </Text>
             <Text
-              color={method === "GET" ? "#06E938" : "red"}
+              color={
+                method === "GET"
+                  ? colorMode === "light"
+                    ? "green.50"
+                    : "green.75"
+                  : colorMode === "light"
+                  ? "red.50"
+                  : "red.75"
+              }
               fontSize="12"
               fontWeight="semibold"
             >
               <Highlight
                 query="time:"
-                styles={{ color: "#505050", fontSize: "15" }}
+                styles={{
+                  color: colorMode === "light" ? "black.50" : "gray.300",
+                  fontSize: "15",
+                }}
               >
                 {`time: ${loadingTime}ms`}
               </Highlight>
             </Text>
             <Text
-              color="#06E938"
+              color={colorMode === "light" ? "green.50" : "green.75"}
               fontSize="12"
               fontWeight="semibold"
               display={method !== "GET" ? "none" : "block"}
             >
               <Highlight
                 query="size:"
-                styles={{ color: "#505050", fontSize: "15" }}
+                styles={{
+                  color: colorMode === "light" ? "black.50" : "gray.300",
+                  fontSize: "15",
+                }}
               >
                 size: 13.68KB
               </Highlight>
@@ -85,17 +113,23 @@ const ResponseData: FC = () => {
           </HStack>
         )}
       </Flex>
-      <Card mt={1} height={80}>
+      <Card
+        mt={1}
+        height={80}
+        bg={colorMode === "light" ? "white" : "gray.800"}
+      >
         <CardBody>
           <Flex mb={2} justify="end">
             <BiCodeAlt
               cursor="pointer"
-              color={viewCode}
+              color={viewCodeColor}
               onClick={() => {
                 method === "GET"
-                  ? viewCode === "gray"
-                    ? setViewCode("#06E938")
-                    : setViewCode("gray")
+                  ? viewCodeColor === "gray"
+                    ? setViewCodeColor(
+                        colorMode === "light" ? "#06E938" : "#37C256"
+                      )
+                    : setViewCodeColor("gray")
                   : "";
               }}
               size="18"

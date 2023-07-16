@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext } from "react";
 import {
   Box,
   Button,
@@ -10,6 +10,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { HiChevronDown } from "react-icons/hi";
 import { RequestContext } from "@/contexts/requestContext";
@@ -17,6 +18,8 @@ import { RequestContext } from "@/contexts/requestContext";
 const RequestSelector: FC = () => {
   const { payload, setPayload } = useContext(RequestContext);
   const { method, route } = payload;
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <FormControl>
@@ -24,9 +27,10 @@ const RequestSelector: FC = () => {
           <Menu>
             <MenuButton
               as={Button}
-              bg="#272727"
-              _hover={{ bg: "#272727" }}
-              _focus={{ bg: "#272727" }}
+              bg="gray.800"
+              _hover={{ bg: "gray.800" }}
+              _focus={{ bg: "gray.800" }}
+              _active={{ bg: "gray.800" }}
               width={"120px"}
               height={"50px"}
               color="white"
@@ -38,32 +42,42 @@ const RequestSelector: FC = () => {
             >
               {method}
             </MenuButton>
-            <MenuList>
+            <MenuList bg={colorMode === "light" ? "white" : "gray.800"}>
               <MenuItem
+                bg={colorMode === "light" ? "white" : "gray.800"}
+                color={colorMode === "light" ? "black.50" : "gray.200"}
                 value="get"
                 onClick={() => setPayload({ ...payload, method: "GET" })}
               >
                 GET
               </MenuItem>
               <MenuItem
+                bg={colorMode === "light" ? "white" : "gray.800"}
+                color={colorMode === "light" ? "black.50" : "gray.200"}
                 value="post"
                 onClick={() => setPayload({ ...payload, method: "POST" })}
               >
                 POST
               </MenuItem>
               <MenuItem
+                bg={colorMode === "light" ? "white" : "gray.800"}
+                color={colorMode === "light" ? "black.50" : "gray.200"}
                 value="put"
                 onClick={() => setPayload({ ...payload, method: "PUT" })}
               >
                 PUT
               </MenuItem>
               <MenuItem
+                bg={colorMode === "light" ? "white" : "gray.800"}
+                color={colorMode === "light" ? "black.50" : "gray.200"}
                 value="patch"
                 onClick={() => setPayload({ ...payload, method: "PATCH" })}
               >
                 PATCH
               </MenuItem>
               <MenuItem
+                bg={colorMode === "light" ? "white" : "gray.800"}
+                color={colorMode === "light" ? "black.50" : "gray.200"}
                 value="delete"
                 onClick={() => setPayload({ ...payload, method: "DELETE" })}
               >
@@ -76,8 +90,8 @@ const RequestSelector: FC = () => {
             value={`getmyip:3000/${route}`}
             fontWeight="normal"
             fontSize={["15", "lg", "lg"]}
-            bg="#F0F2F5"
-            color="#7A7A7A"
+            bg={colorMode === "light" ? "black.25" : "gray.700"}
+            color={colorMode === "light" ? "gray.50" : "gray.400"}
             rounded="12px"
             width={["260px", "500px", "500px"]}
             height={"50px"}
@@ -87,7 +101,11 @@ const RequestSelector: FC = () => {
         </Flex>
       </FormControl>
       <Flex mt={[8, 10, 10]} ms={2}>
-        <Text fontSize={["lg", "xl", "xl"]} color="#505050" fontWeight="bold">
+        <Text
+          fontSize={["lg", "xl", "xl"]}
+          color={colorMode === "light" ? "black.50" : "gray.300"}
+          fontWeight="bold"
+        >
           Routes
         </Text>
       </Flex>
@@ -98,9 +116,11 @@ const RequestSelector: FC = () => {
           bg={
             route === "home"
               ? method === "GET"
-                ? "#C1FFDA"
-                : "#FFC1C1"
-              : "#F0F2F5"
+                ? "green.25"
+                : "red.25"
+              : colorMode === "light"
+              ? "black.25"
+              : "gray.700"
           }
           mr="5"
           rounded="full"
@@ -110,7 +130,11 @@ const RequestSelector: FC = () => {
           <Text
             userSelect="none"
             textAlign="center"
-            color="#505050"
+            color={
+              colorMode === "light" || route === "home"
+                ? "black.50"
+                : "gray.400"
+            }
             py={2}
             fontSize={["sm", "md", "md"]}
             fontWeight="normal"
@@ -124,9 +148,11 @@ const RequestSelector: FC = () => {
           bg={
             route === "expeditions"
               ? method === "GET"
-                ? "#C1FFDA"
-                : "#FFC1C1"
-              : "#F0F2F5"
+                ? "green.25"
+                : "red.25"
+              : colorMode === "light"
+              ? "black.25"
+              : "gray.700"
           }
           mr="5"
           rounded="full"
@@ -136,7 +162,11 @@ const RequestSelector: FC = () => {
           <Text
             userSelect="none"
             textAlign="center"
-            color="#505050"
+            color={
+              colorMode === "light" || route === "expeditions"
+                ? "black.50"
+                : "gray.400"
+            }
             py={2}
             fontSize={["sm", "md", "md"]}
             fontWeight="normal"
@@ -150,9 +180,11 @@ const RequestSelector: FC = () => {
           bg={
             route === "projects"
               ? method === "GET"
-                ? "#C1FFDA"
-                : "#FFC1C1"
-              : "#F0F2F5"
+                ? "green.25"
+                : "red.25"
+              : colorMode === "light"
+              ? "black.25"
+              : "gray.700"
           }
           rounded="full"
           onClick={() => setPayload({ ...payload, route: "projects" })}
@@ -163,7 +195,11 @@ const RequestSelector: FC = () => {
             textAlign="center"
             py={2}
             fontSize={["sm", "md", "md"]}
-            color="#505050"
+            color={
+              colorMode === "light" || route === "projects"
+                ? "black.50"
+                : "gray.400"
+            }
             fontWeight="normal"
           >
             projects
