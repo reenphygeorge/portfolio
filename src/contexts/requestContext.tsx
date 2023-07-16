@@ -1,4 +1,12 @@
-import { FC, PropsWithChildren, createContext, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  PropsWithChildren,
+  SetStateAction,
+  createContext,
+  useMemo,
+  useState,
+} from "react";
 
 type RequestPayload = {
   method: string;
@@ -7,7 +15,7 @@ type RequestPayload = {
 
 type RequestContextProps = {
   payload: RequestPayload;
-  setPayload: (payload: RequestPayload) => void;
+  setPayload: Dispatch<SetStateAction<RequestPayload>>;
 };
 
 const RequestContext = createContext<RequestContextProps>({
@@ -24,10 +32,13 @@ const RequestProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
     route: "home",
   });
 
-  const requestContextProps: RequestContextProps = {
-    payload,
-    setPayload,
-  };
+  const requestContextProps: RequestContextProps = useMemo(
+    () => ({
+      payload,
+      setPayload,
+    }),
+    [payload, setPayload]
+  );
 
   return (
     <RequestContext.Provider value={requestContextProps}>

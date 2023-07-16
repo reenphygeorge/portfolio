@@ -15,8 +15,6 @@ import { HiChevronDown } from "react-icons/hi";
 import { RequestContext } from "@/contexts/requestContext";
 
 const RequestSelector: FC = () => {
-  // const [route, setRoute] = useState<string>("home");
-  // const [method, setMethod] = useState<string>("GET");
   const { payload, setPayload } = useContext(RequestContext);
   const { method, route } = payload;
   return (
@@ -97,7 +95,13 @@ const RequestSelector: FC = () => {
         <Box
           width={["80px", "100px", "100px"]}
           height={["35px", "40px", "40px"]}
-          bg={route === "home" ? "#C1FFDA" : "#F0F2F5"}
+          bg={
+            route === "home"
+              ? method === "GET"
+                ? "#C1FFDA"
+                : "#FFC1C1"
+              : "#F0F2F5"
+          }
           mr="5"
           rounded="full"
           onClick={() => setPayload({ ...payload, route: "home" })}
@@ -117,7 +121,13 @@ const RequestSelector: FC = () => {
         <Box
           width={["120px", "140px", "140px"]}
           height={["35px", "40px", "40px"]}
-          bg={route === "expeditions" ? "#C1FFDA" : "#F0F2F5"}
+          bg={
+            route === "expeditions"
+              ? method === "GET"
+                ? "#C1FFDA"
+                : "#FFC1C1"
+              : "#F0F2F5"
+          }
           mr="5"
           rounded="full"
           onClick={() => setPayload({ ...payload, route: "expeditions" })}
@@ -137,7 +147,13 @@ const RequestSelector: FC = () => {
         <Box
           width={["100px", "120px", "120px"]}
           height={["35px", "40px", "40px"]}
-          bg={route === "projects" ? "#C1FFDA" : "#F0F2F5"}
+          bg={
+            route === "projects"
+              ? method === "GET"
+                ? "#C1FFDA"
+                : "#FFC1C1"
+              : "#F0F2F5"
+          }
           rounded="full"
           onClick={() => setPayload({ ...payload, route: "projects" })}
           cursor="pointer"
