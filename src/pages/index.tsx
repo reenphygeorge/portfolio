@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { NextPage } from "next";
-import { Container } from "@chakra-ui/react";
+import { Container, HStack, Text, useColorMode } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
 import RouteSelector from "@/components/requestSelector";
 import ResponseData from "@/components/responseData";
+import Footer from "@/components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -16,11 +17,11 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Navbar />
-
-        <Container h="100vh" pt="120px" maxW="xl">
+        <Container h="auto" pt="120px" mb="10" maxW="xl">
           <RouteSelector />
           <ResponseData />
         </Container>
+        <Footer />
       </main>
     </>
   );

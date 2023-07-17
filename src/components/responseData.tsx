@@ -3,6 +3,7 @@ import {
   Box,
   Card,
   CardBody,
+  Container,
   Divider,
   Flex,
   HStack,
@@ -16,7 +17,9 @@ import Lottie from "lottie-react";
 import spinner from "../../public/spinner.json";
 import { RequestContext } from "@/contexts/requestContext";
 import wave from "../../public/wave.gif";
-import PageHome from "./pageHome";
+import HomePage from "./homePage";
+import ExpeditionsPage from "./expeditionsPage";
+import ProjectsPage from "./projectsPage";
 
 const ResponseData: FC = () => {
   const [viewCodeColor, setViewCodeColor] = useState<string>("gray");
@@ -116,7 +119,7 @@ const ResponseData: FC = () => {
       </Flex>
       <Card
         mt={1}
-        height={loading ? 80 : "fit-content"}
+        height={method === "GET" ? "fit-content" : "80"}
         bg={colorMode === "light" ? "white" : "gray.800"}
       >
         <CardBody>
@@ -137,17 +140,23 @@ const ResponseData: FC = () => {
             />
           </Flex>
           <Divider />
-          {loading ? (
-            <Flex h="full" justify="center" alignItems="center">
-              <Box w={10}>
-                <Lottie animationData={spinner} loop={true} />
-              </Box>
-            </Flex>
-          ) : route === "home" && method === "GET" ? (
-            <PageHome />
-          ) : (
-            <Image src={wave} alt="wave" width={30} height={30} />
-          )}
+          <Container mt={5}>
+            {loading ? (
+              <Flex h="80" justify="center" alignItems="center">
+                <Box w={10}>
+                  <Lottie animationData={spinner} loop={true} />
+                </Box>
+              </Flex>
+            ) : route === "home" && method === "GET" ? (
+              <HomePage />
+            ) : route === "expeditions" && method === "GET" ? (
+              <ExpeditionsPage />
+            ) : route === "projects" && method === "GET" ? (
+              <ProjectsPage />
+            ) : (
+              <Image src={wave} alt="wave" width={30} height={30} />
+            )}
+          </Container>
         </CardBody>
       </Card>
     </>

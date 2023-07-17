@@ -6,9 +6,10 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import { FC } from "react";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 
-const Navbar = () => {
+const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box

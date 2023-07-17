@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Container,
   HStack,
   Link,
   Text,
@@ -14,12 +13,13 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { BiLogoLinkedin } from "react-icons/bi";
+import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 
-const PageHome: FC = () => {
+const HomePage: FC = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Container mt={5}>
+    <>
       <HStack>
         <Avatar
           name="Reenphy George"
@@ -43,6 +43,7 @@ const PageHome: FC = () => {
           A full stack dev from India. Currently learning Golang and
           building&nbsp;
           <Link
+            target="_blank"
             color={colorMode === "light" ? "green.50" : "green.75"}
             href="https://github.com/DarkPhoenix2704/fossfolio"
           >
@@ -51,7 +52,7 @@ const PageHome: FC = () => {
         </Text>
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          mt={3}
+          mt={5}
           fontSize="15px"
           fontWeight="semibold"
         >
@@ -59,7 +60,7 @@ const PageHome: FC = () => {
         </Text>
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          mt={3}
+          mt={5}
           fontSize="15px"
           fontWeight="semibold"
         >
@@ -74,26 +75,46 @@ const PageHome: FC = () => {
         >
           Building Products; Solving Problems
         </Text>
-        <HStack spacing={5} mt={5}>
-          <Link href="https://github.com/reenphygeorge" fontWeight="bold">
+        <HStack spacing={5} mt={7}>
+          <Link
+            target="_blank"
+            href="https://github.com/reenphygeorge"
+            fontWeight="bold"
+          >
             <AiOutlineGithub size={23} />
           </Link>
-          <Link href="https://twitter.com/reenphygeorge" fontWeight="bold">
+          <Link
+            target="_blank"
+            href="https://twitter.com/reenphygeorge"
+            fontWeight="bold"
+          >
             <AiOutlineTwitter size={23} />
           </Link>
           <Link
+            target="_blank"
             href="https://www.linkedin.com/in/reenphygeorge/"
             fontWeight="bold"
           >
             <BiLogoLinkedin size={23} />
           </Link>
-          <Link href="mailto:reenphygeorge@gmail.com" fontWeight="bold">
+          <Link
+            target="_blank"
+            href="mailto:reenphygeorge@gmail.com"
+            fontWeight="bold"
+          >
             <AiOutlineMail size={23} />
+          </Link>
+          <Link
+            target="_blank"
+            href="mailto:reenphygeorge@gmail.com"
+            fontWeight="bold"
+          >
+            <HiOutlineDocumentArrowDown size={23} />
           </Link>
         </HStack>
       </Box>
-    </Container>
+    </>
   );
 };
 
-export default PageHome;
+export default HomePage;
