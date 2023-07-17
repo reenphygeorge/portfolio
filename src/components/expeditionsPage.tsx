@@ -1,4 +1,4 @@
-import { Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
+import { HStack, Link, Text, useColorMode } from "@chakra-ui/react";
 import { FC } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
@@ -41,39 +41,100 @@ const ExpeditionsPage: FC = () => {
         <HiMagnifyingGlass size="18px" />
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          fontSize="18px"
+          fontSize={["18px", "20px", "22px"]}
           fontWeight="bold"
         >
           Tech Explored
         </Text>
       </HStack>
       <HStack wrap="wrap" mt={10} spacing={[8, 9, 10]}>
-        <AiFillHtml5 size={30} />
-        <BiLogoCss3 size={30} />
-        <BiLogoJavascript size={30} />
-        <FaBootstrap size={30} />
-        <BiLogoTypescript size={30} />
-        <BiLogoTailwindCss size={30} />
-        <BiLogoReact size={30} />
-        <TbBrandNextjs size={30} />
-        <SiChakraui size={30} />
-        <SiFirebase size={30} />
-        <BiLogoNodejs size={30} />
-        <SiExpress size={30} />
-        <SiNestjs size={30} />
-        <SiPrisma size={30} />
-        <FaDocker size={30} />
-        <SiCapacitor size={30} />
-        <FaLinux size={30} />
-        <FaPython size={30} />
-        <FaJava size={30} />
-        <FaGolang size={30} />
-        <FaFigma size={30} />
-        <BiLogoGit size={30} />
-        <BiLogoMongodb size={30} />
-        <BiLogoPostgresql size={30} />
-        <TbBrandMysql size={30} />
-        <AiFillGithub size={30} />
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+        >
+          <AiFillHtml5 size={30} />
+        </Link>
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+        >
+          <BiLogoCss3 size={30} />
+        </Link>
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/javascript"
+        >
+          <BiLogoJavascript size={30} />
+        </Link>
+        <Link target="_blank" href="https://getbootstrap.com/">
+          <FaBootstrap size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.typescriptlang.org/">
+          <BiLogoTypescript size={30} />
+        </Link>
+        <Link target="_blank" href="https://tailwindcss.com/">
+          <BiLogoTailwindCss size={30} />
+        </Link>
+        <Link target="_blank" href="https://react.dev/">
+          <BiLogoReact size={30} />
+        </Link>
+        <Link target="_blank" href="https://nextjs.org/">
+          <TbBrandNextjs size={30} />
+        </Link>
+        <Link target="_blank" href="https://chakra-ui.com/">
+          <SiChakraui size={30} />
+        </Link>
+        <Link target="_blank" href="https://firebase.google.com/">
+          <SiFirebase size={30} />
+        </Link>
+        <Link target="_blank" href="https://nodejs.org/">
+          <BiLogoNodejs size={30} />
+        </Link>
+        <Link target="_blank" href="https://expressjs.com/">
+          <SiExpress size={30} />
+        </Link>
+        <Link target="_blank" href="https://nestjs.com/">
+          <SiNestjs size={30} />
+        </Link>
+        <Link target="_blank" href="https://prisma.io/">
+          <SiPrisma size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.docker.com/">
+          <FaDocker size={30} />
+        </Link>
+        <Link target="_blank" href="https://capacitorjs.com/">
+          <SiCapacitor size={30} />
+        </Link>
+        <Link target="_blank" href="https://linux.org/">
+          <FaLinux size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.python.org/">
+          <FaPython size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.java.com/en/">
+          <FaJava size={30} />
+        </Link>
+        <Link target="_blank" href="https://go.dev">
+          <FaGolang size={30} />
+        </Link>
+        <Link target="_blank" href="https://figma.com">
+          <FaFigma size={30} />
+        </Link>
+        <Link target="_blank" href="https://git-scm.com/">
+          <BiLogoGit size={30} />
+        </Link>
+        <Link target="_blank" href="https://mongodb.com/">
+          <BiLogoMongodb size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.postgresql.org/">
+          <BiLogoPostgresql size={30} />
+        </Link>
+        <Link target="_blank" href="https://www.mysql.com/">
+          <TbBrandMysql size={30} />
+        </Link>
+        <Link target="_blank" href="https://github.com">
+          <AiFillGithub size={30} />
+        </Link>
       </HStack>
     </>
   );

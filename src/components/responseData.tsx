@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Box,
   Card,
@@ -12,11 +11,10 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { FC, useContext, useEffect, useState } from "react";
-import { BiCodeAlt } from "react-icons/bi";
+import { BiSad, BiCodeAlt } from "react-icons/bi";
 import Lottie from "lottie-react";
 import spinner from "../../public/spinner.json";
 import { RequestContext } from "@/contexts/requestContext";
-import wave from "../../public/wave.gif";
 import HomePage from "./homePage";
 import ExpeditionsPage from "./expeditionsPage";
 import ProjectsPage from "./projectsPage";
@@ -25,13 +23,13 @@ const ResponseData: FC = () => {
   const [viewCodeColor, setViewCodeColor] = useState<string>("gray");
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingTime, setLoadingTime] = useState<number>();
-  const { payload, setPayload } = useContext(RequestContext);
+  const { payload } = useContext(RequestContext);
   const { method, route } = payload;
 
   const { colorMode } = useColorMode();
 
   useEffect(() => {
-    let randomDuration: number = Math.floor(Math.random() * 301) + 100; // Generate a random number between 100 and 300
+    let randomDuration: number = Math.floor(Math.random() * 301) + 100;
     method === "GET" ? (randomDuration *= 2) : "";
     setLoadingTime(randomDuration);
     setLoading(true);
@@ -104,22 +102,44 @@ const ResponseData: FC = () => {
               fontWeight="semibold"
               display={method !== "GET" ? "none" : "block"}
             >
-              <Highlight
-                query="size:"
-                styles={{
-                  color: colorMode === "light" ? "black.50" : "gray.300",
-                  fontSize: "15",
-                }}
-              >
-                size: 13.68KB
-              </Highlight>
+              {route === "home" ? (
+                <Highlight
+                  query="size:"
+                  styles={{
+                    color: colorMode === "light" ? "black.50" : "gray.300",
+                    fontSize: "15",
+                  }}
+                >
+                  size: 4.8KB
+                </Highlight>
+              ) : route === "expeditions" ? (
+                <Highlight
+                  query="size:"
+                  styles={{
+                    color: colorMode === "light" ? "black.50" : "gray.300",
+                    fontSize: "15",
+                  }}
+                >
+                  size: 38.3KB
+                </Highlight>
+              ) : (
+                <Highlight
+                  query="size:"
+                  styles={{
+                    color: colorMode === "light" ? "black.50" : "gray.300",
+                    fontSize: "15",
+                  }}
+                >
+                  size: 12.26KB
+                </Highlight>
+              )}
             </Text>
           </HStack>
         )}
       </Flex>
       <Card
         mt={1}
-        height={method === "GET" ? "fit-content" : "80"}
+        height="fit-content"
         bg={colorMode === "light" ? "white" : "gray.800"}
       >
         <CardBody>
@@ -154,7 +174,18 @@ const ResponseData: FC = () => {
             ) : route === "projects" && method === "GET" ? (
               <ProjectsPage />
             ) : (
-              <Image src={wave} alt="wave" width={30} height={30} />
+              <Flex h="80" justify="center" alignItems="center">
+                <HStack>
+                  <Text
+                    color={colorMode === "light" ? "black.50" : "gray.300"}
+                    fontSize={["14px", "15px", "16px"]}
+                    fontWeight="semibold"
+                  >
+                    API Not Found
+                  </Text>
+                  <BiSad />
+                </HStack>
+              </Flex>
             )}
           </Container>
         </CardBody>

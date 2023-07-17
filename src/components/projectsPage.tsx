@@ -52,7 +52,7 @@ const ProjectsPage = () => {
             fontSize={["16px", "18px", "20px"]}
             fontWeight="bold"
           >
-            Tinker Platform
+            TinkerHub Platform
           </Text>
           <Text
             mt={2}
@@ -61,7 +61,7 @@ const ProjectsPage = () => {
             fontWeight="medium"
           >
             Tinkerhub Platform is a community built platform for Tinkers to
-            conduct there activities.
+            conduct their activities.
           </Text>
           <HStack mt={2} spacing={5}>
             <Link target="_blank" href="https://github.com/tinkerhub/platform">

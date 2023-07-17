@@ -7,13 +7,10 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import {
-  AiOutlineGithub,
-  AiOutlineTwitter,
-  AiOutlineMail,
-} from "react-icons/ai";
+import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
+import { RiFileDownloadLine } from "react-icons/ri";
+import { MdOutlineMailOutline } from "react-icons/md";
 
 const HomePage: FC = () => {
   const { colorMode } = useColorMode();
@@ -28,7 +25,7 @@ const HomePage: FC = () => {
         />
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          fontSize="15px"
+          fontSize={["18px", "20px", "22px"]}
           fontWeight="bold"
         >
           Reenphy George
@@ -37,7 +34,7 @@ const HomePage: FC = () => {
       <Box mt={5}>
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          fontSize="15px"
+          fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
           A full stack dev from India. Currently learning Golang and
@@ -53,7 +50,7 @@ const HomePage: FC = () => {
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
           mt={5}
-          fontSize="15px"
+          fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
           Love the ideology of FOSS and I do contribute during my free time.
@@ -61,7 +58,7 @@ const HomePage: FC = () => {
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
           mt={5}
-          fontSize="15px"
+          fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
           I love solving problems which I find interesting. Hence I tagline
@@ -69,13 +66,13 @@ const HomePage: FC = () => {
         </Text>
         <Text
           color={colorMode === "light" ? "black.50" : "gray.300"}
-          mt={2}
-          fontSize="15px"
+          mt={4}
+          fontSize={["14px", "15px", "16px"]}
           fontWeight="black"
         >
           Building Products; Solving Problems
         </Text>
-        <HStack spacing={5} mt={7}>
+        <HStack spacing={5} mt={8}>
           <Link
             target="_blank"
             href="https://github.com/reenphygeorge"
@@ -102,14 +99,16 @@ const HomePage: FC = () => {
             href="mailto:reenphygeorge@gmail.com"
             fontWeight="bold"
           >
-            <AiOutlineMail size={23} />
+            <MdOutlineMailOutline size={23} />
           </Link>
           <Link
             target="_blank"
-            href="mailto:reenphygeorge@gmail.com"
+            href="/Reenphy.pdf"
+            download
+            rel="noreferrer"
             fontWeight="bold"
           >
-            <HiOutlineDocumentArrowDown size={23} />
+            <RiFileDownloadLine size={23} />
           </Link>
         </HStack>
       </Box>
