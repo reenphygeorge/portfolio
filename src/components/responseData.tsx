@@ -16,6 +16,7 @@ import Lottie from "lottie-react";
 import spinner from "../../public/spinner.json";
 import { RequestContext } from "@/contexts/requestContext";
 import wave from "../../public/wave.gif";
+import PageHome from "./pageHome";
 
 const ResponseData: FC = () => {
   const [viewCodeColor, setViewCodeColor] = useState<string>("gray");
@@ -115,7 +116,7 @@ const ResponseData: FC = () => {
       </Flex>
       <Card
         mt={1}
-        height={80}
+        height={loading ? 80 : "fit-content"}
         bg={colorMode === "light" ? "white" : "gray.800"}
       >
         <CardBody>
@@ -136,15 +137,17 @@ const ResponseData: FC = () => {
             />
           </Flex>
           <Divider />
-          <Flex h="full" justify="center" alignItems="center">
-            {loading ? (
+          {loading ? (
+            <Flex h="full" justify="center" alignItems="center">
               <Box w={10}>
                 <Lottie animationData={spinner} loop={true} />
               </Box>
-            ) : (
-              <Image src={wave} alt="wave" width={30} height={30} />
-            )}
-          </Flex>
+            </Flex>
+          ) : route === "home" && method === "GET" ? (
+            <PageHome />
+          ) : (
+            <Image src={wave} alt="wave" width={30} height={30} />
+          )}
         </CardBody>
       </Card>
     </>
