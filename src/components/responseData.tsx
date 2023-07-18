@@ -11,7 +11,8 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { FC, useContext, useEffect, useState } from "react";
-import { BiSad, BiCodeAlt } from "react-icons/bi";
+import { BiSad } from "react-icons/bi";
+import { VscServerProcess } from "react-icons/vsc";
 import Lottie from "lottie-react";
 import spinner from "../../public/spinner.json";
 import { RequestContext } from "@/contexts/requestContext";
@@ -20,7 +21,7 @@ import ExpeditionsPage from "./expeditionsPage";
 import ProjectsPage from "./projectsPage";
 
 const ResponseData: FC = () => {
-  const [viewCodeColor, setViewCodeColor] = useState<string>("gray");
+  const [render, setRender] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingTime, setLoadingTime] = useState<number>();
   const { payload } = useContext(RequestContext);
@@ -31,9 +32,9 @@ const ResponseData: FC = () => {
   useEffect(() => {
     let randomDuration: number = Math.floor(Math.random() * 301) + 100;
     method === "GET" ? (randomDuration *= 2) : "";
+    method === "GET" ? setRender(true) : setRender(false);
     setLoadingTime(randomDuration);
     setLoading(true);
-    setViewCodeColor("gray");
     const timer = setTimeout(() => {
       setLoading(false);
     }, randomDuration);
@@ -144,18 +145,14 @@ const ResponseData: FC = () => {
       >
         <CardBody>
           <Flex mb={2} justify="end">
-            <BiCodeAlt
-              cursor="pointer"
-              color={viewCodeColor}
-              onClick={() => {
-                method === "GET"
-                  ? viewCodeColor === "gray"
-                    ? setViewCodeColor(
-                        colorMode === "light" ? "#06E938" : "#37C256"
-                      )
-                    : setViewCodeColor("gray")
-                  : "";
-              }}
+            <VscServerProcess
+              color={
+                render === true && colorMode === "light"
+                  ? "#06E938"
+                  : render === true && colorMode === "dark"
+                  ? "#37C256"
+                  : "gray"
+              }
               size="18"
             />
           </Flex>

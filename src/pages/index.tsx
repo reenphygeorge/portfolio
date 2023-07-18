@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { NextPage } from "next";
-import { Container, HStack, Text, useColorMode } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import Navbar from "@/components/navbar";
 import RouteSelector from "@/components/requestSelector";
 import ResponseData from "@/components/responseData";
