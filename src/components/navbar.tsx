@@ -1,3 +1,4 @@
+import { ColorContext } from "@/contexts/colorContext";
 import {
   Box,
   Container,
@@ -6,20 +7,17 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { navBg } = useContext(ColorContext);
   return (
     <Box
       position="fixed"
       width="100vw"
-      bg={
-        colorMode === "light"
-          ? "rgba(255, 255, 255, 0.15)"
-          : "rgba(23, 25, 35, 0.15)"
-      }
+      bg={navBg}
       backdropFilter="blur(5px)"
       zIndex={100}
     >

@@ -1,5 +1,5 @@
-import { HStack, Link, Text, useColorMode } from "@chakra-ui/react";
-import { FC } from "react";
+import { HStack, Link, Text } from "@chakra-ui/react";
+import { FC, useContext } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
 import {
@@ -31,23 +31,24 @@ import {
   FaJava,
 } from "react-icons/fa6";
 import { TbBrandNextjs, TbBrandMysql } from "react-icons/tb";
+import { ColorContext } from "@/contexts/colorContext";
 
 const ExpeditionsPage: FC = () => {
-  const { colorMode } = useColorMode();
+  const { black50 } = useContext(ColorContext);
 
   return (
     <>
       <HStack>
         <HiMagnifyingGlass size="18px" />
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           fontSize={["18px", "20px", "22px"]}
           fontWeight="bold"
         >
           Tech Explored
         </Text>
       </HStack>
-      <HStack wrap="wrap" mt={10} spacing={[8, 9, 10]}>
+      <HStack wrap="wrap" mt={10} spacing={[7, 9, 10]}>
         <Link
           target="_blank"
           href="https://developer.mozilla.org/en-US/docs/Web/HTML"

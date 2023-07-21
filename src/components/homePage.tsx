@@ -1,19 +1,13 @@
-import {
-  Avatar,
-  Box,
-  HStack,
-  Link,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
-import { FC } from "react";
+import { Avatar, Box, HStack, Link, Text } from "@chakra-ui/react";
+import { FC, useContext } from "react";
 import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { RiFileDownloadLine } from "react-icons/ri";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { ColorContext } from "@/contexts/colorContext";
 
 const HomePage: FC = () => {
-  const { colorMode } = useColorMode();
+  const { black50, green50 } = useContext(ColorContext);
 
   return (
     <>
@@ -24,7 +18,7 @@ const HomePage: FC = () => {
           size="md"
         />
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           fontSize={["18px", "20px", "22px"]}
           fontWeight="bold"
         >
@@ -33,7 +27,7 @@ const HomePage: FC = () => {
       </HStack>
       <Box mt={5}>
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
@@ -41,14 +35,14 @@ const HomePage: FC = () => {
           building&nbsp;
           <Link
             target="_blank"
-            color={colorMode === "light" ? "green.50" : "green.75"}
+            color={green50}
             href="https://github.com/DarkPhoenix2704/fossfolio"
           >
             fossfolio
           </Link>
         </Text>
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           mt={5}
           fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
@@ -56,7 +50,7 @@ const HomePage: FC = () => {
           Love the ideology of FOSS and I do contribute during my free time.
         </Text>
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           mt={5}
           fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
@@ -65,7 +59,7 @@ const HomePage: FC = () => {
           myself:
         </Text>
         <Text
-          color={colorMode === "light" ? "black.50" : "gray.300"}
+          color={black50}
           mt={4}
           fontSize={["14px", "15px", "16px"]}
           fontWeight="black"
