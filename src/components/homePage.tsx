@@ -31,14 +31,14 @@ const HomePage: FC = () => {
           fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
-          A full stack dev from India. Currently learning Golang and
-          building&nbsp;
+          A full stack dev from India. Currently learning Vue and
+          working as an intern at&nbsp;
           <Link
             target="_blank"
             color={green50}
-            href="https://github.com/DarkPhoenix2704/fossfolio"
+            href="https://nocodb.com"
           >
-            fossfolio
+            NocoDB
           </Link>
         </Text>
         <Text
