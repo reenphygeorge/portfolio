@@ -31,8 +31,7 @@ const HomePage: FC = () => {
           fontSize={["14px", "15px", "16px"]}
           fontWeight="semibold"
         >
-          A full stack dev from India. Currently learning Vue and
-          working as an intern at&nbsp;
+          Ex-Intern at&nbsp;
           <Link
             target="_blank"
             color={green50}
@@ -40,6 +39,7 @@ const HomePage: FC = () => {
           >
             NocoDB
           </Link>
+          &nbsp;| Full stack dev
         </Text>
         <Text
           color={black50}
