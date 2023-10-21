@@ -97,8 +97,7 @@ const HomePage: FC = () => {
           </Link>
           <Link
             target="_blank"
-            href="/Reenphy.pdf"
-            download
+            href="/resume.pdf"
             rel="noreferrer"
             fontWeight="bold"
           >
