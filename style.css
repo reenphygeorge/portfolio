@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
@@ -18,90 +17,77 @@ body {
 
 .home {
     border-radius: 17px !important;
-    
+
 }
 
 .head {
     color: #d5d4d4;
 }
 
-.intro-text h6
-{
+.intro-text h6 {
     font-size: 12px;
     font-family: "Roboto", sans-serif;
     letter-spacing: 2.1px;
 }
 
-.intro-text h3 
-{
+.intro-text h3 {
     font-size: calc(35px+1vw);
     font-family: "Roboto", sans-serif;
     letter-spacing: 1px;
 }
 
-.intro-text h4 
-{
+.intro-text h4 {
     font-size: 13px;
     font-family: "Roboto", sans-serif;
     letter-spacing: 1px;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
-.intro-text p 
-{
+.intro-text p {
     font-family: "Roboto", sans-serif;
     color: #b9b7b7;
 }
 
-.basic-info
-{
+.basic-info {
     padding-left: 0px;
 }
 
-.basic-icn
-{
+.basic-icn {
     height: 35px;
     margin-right: 5px;
 }
 
-.anchor
-{
+.anchor {
     text-decoration: none;
     color: #b3afaf;
 }
 
-.anchor:hover
-{
+.anchor:hover {
     color: rgb(154, 153, 147);
 }
 
-.social-icn
-{
+.social-icn {
     margin-right: 20px;
 }
 
-.about h3 
-{
+.about h3 {
     font-family: "Roboto", sans-serif;
     font-size: 25px;
     line-height: 2.3;
 }
 
-.about p 
-{
+.about p {
     font-family: "Roboto", sans-serif;
     color: #b9b7b7;
 }
 
-.skills h3 
-{
+.skills h3 {
     font-family: "Roboto", sans-serif;
     font-size: 25px;
     line-height: 2.3;
 }
 
-.skill-icn
-{
+.skill-icn {
     color: #b9b7b7;
     margin-right: 20px;
     margin-top: 20px;
@@ -111,22 +97,19 @@ body {
     border-radius: 17px !important;
 }
 
-.projects h3
-{
+.projects h3 {
     font-family: "Roboto", sans-serif;
     font-size: 25px;
 }
 
-.projects p
-{
+.projects p {
     color: #b9b7b7;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
-    text-align:center;
+    text-align: center;
 }
 
-.projects h4
-{
+.projects h4 {
     color: #b9b7b7;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
@@ -162,5 +145,22 @@ body {
 }
 
 .project-card-link:hover {
-    color:rgb(222, 84, 84);
+    color: rgb(222, 84, 84);
+}
+
+.form-label {
+    color: #d5d4d4;
+}
+
+.form-control {
+    background-color: #000 !important;
+    color: #d5d4d4 !important;
+    border: none;
+}
+
+.btn {
+    background-color: #000 !important;
+    color: #d5d4d4 !important;
+    width: 100px;
+    height: 50px;
 }
