@@ -1,6 +1,6 @@
 import { Button, HStack, Link, Text } from "@chakra-ui/react";
 import { HiOutlineCodeBracketSquare } from "react-icons/hi2";
-import { DiGithubAlt } from "react-icons/di";
+import { DiGithubAlt, DiNpm } from "react-icons/di";
 import { MdOpenInBrowser } from "react-icons/md";
 import { ReactElement, useContext, useState } from "react";
 import { ColorContext } from "@/contexts/colorContext";
@@ -20,6 +20,36 @@ const ProjectsPage = () => {
           fontSize={["16px", "18px", "20px"]}
           fontWeight="bold"
         >
+          Smol-Auth
+        </Text>
+        <Text
+          mt={2}
+          color={black50}
+          fontSize={["14px", "15px", "16px"]}
+          fontWeight="medium"
+        >
+          A smol authentication package with RBAC 🔐
+        </Text>
+        <HStack mt={2}>
+          <Link
+            target="_blank"
+            href="https://github.com/reenphygeorge/smol-auth"
+          >
+            <DiGithubAlt size={24} />
+          </Link>
+          <Link
+            target="_blank"
+            href="https://www.npmjs.com/package/smol-auth-express"
+          >
+            <DiNpm size={24} />
+          </Link>
+        </HStack>
+        <Text
+          mt={7}
+          color={black50}
+          fontSize={["16px", "18px", "20px"]}
+          fontWeight="bold"
+        >
           Servette
         </Text>
         <Text
@@ -28,7 +58,7 @@ const ProjectsPage = () => {
           fontSize={["14px", "15px", "16px"]}
           fontWeight="medium"
         >
-          A Go-Based Open-Source Live Server for Rapid Web Development.
+          A terminal based open-source live server written in Golang for rapid web development.
         </Text>
         <HStack mt={2}>
           <Link

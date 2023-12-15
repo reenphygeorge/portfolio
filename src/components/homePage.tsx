@@ -39,7 +39,14 @@ const HomePage: FC = () => {
           >
             NocoDB
           </Link>
-          &nbsp;| Full stack dev
+          &nbsp;| Full stack dev | Currently building&nbsp;
+          <Link
+            target="_blank"
+            color={green50}
+            href="https://github.com/reenphygeorge/vPrompt"
+          >
+            vPrompt
+          </Link>
         </Text>
         <Text
           color={black50}
