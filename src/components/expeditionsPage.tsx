@@ -20,6 +20,7 @@ import {
   SiNestjs,
   SiPrisma,
   SiCapacitor,
+  SiJsonwebtokens,
 } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
 import {
@@ -108,6 +109,9 @@ const ExpeditionsPage: FC = () => {
         </Link>
         <Link target="_blank" href="https://linux.org/">
           <FaLinux size={30} />
+        </Link>
+        <Link target="_blank" href="https://jwt.io/">
+          <SiJsonwebtokens size={30} />
         </Link>
         <Link target="_blank" href="https://www.python.org/">
           <FaPython size={30} />
